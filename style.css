@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-size: 100%;
+    /* background: linear-gradient(68.15deg, #181939 16.62%, #4b538f 85.61%);*/
+}
+
+
+.div_principal {
+    margin: auto;
+    border-radius: 11px 11px 11px 11px;
+    width: 500px;
+    height: 500px;
+    box-shadow: 7px 4px 14px 0px rgba(0, 0, 0, 0.75);
+    background-color: #FFFFFF;
+    margin-top: 10px;
+    display: grid;
+    place-items: center;
+}
+
+.css_input {
+    width: 50%;
+    padding: 1px;
+    font-size: 16px;
+    border-width: 1px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-style: solid;
+    border-radius: 0px;
+    box-shadow: 0px 0px 2px rgba(66, 66, 66, .63);
+    text-align: center;
+}
+
+.css_input:focus {
+    outline: none;
+}
+
+.bt_calc {
+    box-shadow: 0px 0px 0px 0px #74d15a;
+    background-color: #1d6ea3;
+    border: 1px solid #000000;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 16px 35px;
+    text-decoration: none;
+}
+
+.bt_calc:hover {
+    background-color: #004d80;
+}
+
+.bt_calc:active {
+    position: relative;
+    top: 1px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#mensagem {
+    position: relative;
+    margin-left: 6px;
+    padding: 10px;
+    background-color: #A8DDFD;
+    text-align: left;
+    font: 400 .9em 'Open Sans', sans-serif;
+    border: 1px solid #97C6E3;
+    border-radius: 10px;
+}
+
+#mensagem:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 15px solid #A8DDFD;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    top: 0;
+    left: -15px;
+}
+
+#mensagem:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 17px solid #97C6E3;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    top: -1px;
+    left: -17px;
+}

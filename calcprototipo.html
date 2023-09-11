@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Simulador financeiro</h1>
+    <!-- <h2>Com a Art Vision Tech (AVT), oferecemos a melhor relação custo-benefício do mercado, garantindo que nossos
+        sensores atendam plenamente às necessidades de conservação do museu.</h2> -->
+
+    <div class="div_principal">
+
+        Diga a nós o seu nome:
+        <br><input class="css_input" type="text" id="ipt_nome" placeholder="Nome"> <br> <br>
+
+        Diga a nós que instituto de arte você representa:
+        <br><input class="css_input" type="text" id="arte" placeholder="Instituto de arte"> <br> <br>
+
+        Quantas obras estão expostas e demandam o controle dos nossos sensores:
+        <br> <input class="css_input" type="text" id="qtd_sensor" placeholder="Quantos sensores você precisa"> <br>
+        <br>
+
+        Gasto médio com manutenção anual das obras:
+        <br><input class="css_input" type="text" id="gastos_anuais" placeholder="manutenção anual"> <br> <br>
+
+        <button class="bt_calc" onclick="simulador()">Calcular</button> <br>
+
+    </div>
+
+    <div style="visibility: hidden;" id="mensagem"></div>
+
+
+</body>
+
+</html>
+
+<script>
+    function simulador() {
+        var nome = ipt_nome.value;
+        var instituto = arte.value;
+        var sensor = Number(qtd_sensor.value);
+        var manutencao = Number(gastos_anuais.value);
+        var valorSensor = sensor * 150;
+        var total = valorSensor + (manutencao - 15000);
+        var manutencaoTotal = manutencao - 15000;
+        var manutencaoDesconto = 15000 - manutencao;
+        var porcentagem = (15000 / manutencao) * 100
+        var totalPct = 100 - porcentagem
+
+        if (manutencao < 15000) {
+            mensagem.innerHTML = `<div style="visibility: visible;" id="mensagem">Olá ${nome} soube que você representa o instituto ${instituto} e necessita da demanda de ${sensor} sensores, essa quantidade custará R$${valorSensor}. Seu custo atual com  manutenção anual é de R$${manutencao} contratando nosso serviço você receberá um desconto em manutenção de R$${manutencaoDesconto}, ou seja, tendo o custo total do projeto de R$${total}</div>
+             `
+        } else {
+            mensagem.innerHTML = ` <div style="visibility: hidden;" id="mensagem">Olá ${nome} soube que você representa o instituto ${instituto} e necessita da demanda de ${sensor} sensores, essa quantidade custará R$${valorSensor}, seu custo atual com manutenção anual é de R$${manutencao} com nossos serviços você poupará R$${manutencaoTotal}, ou seja você reduziu o seu gasto com manutenção em ${totalPct}%, tendo o custo final do projeto de R$${total}, nos tornando a opção com maior custo benefício para o instituto ${instituto}</div> `
+        }
+    }
+</script>

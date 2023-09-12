@@ -46,17 +46,16 @@
         var sensor = Number(qtd_sensor.value);
         var manutencao = Number(gastos_anuais.value);
         var valorSensor = sensor * 150;
-        var total = valorSensor + (manutencao - 15000);
+        var total = valorSensor + 15000;
         var manutencaoTotal = manutencao - 15000;
         var manutencaoDesconto = 15000 - manutencao;
-        var porcentagem = (15000 / manutencao) * 100
-        var totalPct = 100 - porcentagem
+        var porcentagem = (15000 / manutencao) * 100;
 
         if (manutencao < 15000) {
             mensagem.innerHTML = `<div style="visibility: visible;" id="mensagem">Olá ${nome} soube que você representa o instituto ${instituto} e necessita da demanda de ${sensor} sensores, essa quantidade custará R$${valorSensor}. Seu custo atual com  manutenção anual é de R$${manutencao} contratando nosso serviço você receberá um desconto em manutenção de R$${manutencaoDesconto}, ou seja, tendo o custo total do projeto de R$${total}</div>
              `
         } else {
-            mensagem.innerHTML = ` <div style="visibility: hidden;" id="mensagem">Olá ${nome} soube que você representa o instituto ${instituto} e necessita da demanda de ${sensor} sensores, essa quantidade custará R$${valorSensor}, seu custo atual com manutenção anual é de R$${manutencao} com nossos serviços você poupará R$${manutencaoTotal}, ou seja você reduziu o seu gasto com manutenção em ${totalPct}%, tendo o custo final do projeto de R$${total}, nos tornando a opção com maior custo benefício para o instituto ${instituto}</div> `
+            mensagem.innerHTML = ` <div style="visibility: visible;" id="mensagem">Olá ${nome} soube que você representa o instituto ${instituto} e necessita da demanda de ${sensor} sensores, essa quantidade custará R$${valorSensor}, seu custo atual com manutenção anual é de R$${manutencao} com nossos serviços você poupará R$${manutencaoTotal}, ou seja você reduziu o seu gasto com manutenção em ${porcentagem}%, tendo o custo final do projeto de R$${total}, nos tornando a opção com maior custo benefício para o instituto ${instituto}</div> `
         }
     }
 </script>
